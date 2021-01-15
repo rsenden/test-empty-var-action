@@ -1,0 +1,14 @@
+name: Not Set
+on: [workflow_dispatch]
+      
+jobs:                                                  
+  test_var_not_set:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Docker - var not set
+        uses: docker://rsenden/test-empty-var-action:latest
+
+      - name: Action - var not set
+        uses: rsenden/test-empty-var-action@master
+        
