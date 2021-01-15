@@ -1,0 +1,35 @@
+name: Test empty variable
+on: [workflow_dispatch]
+      
+jobs:                                                  
+  test_empty_variable:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Docker - var not set
+        uses: docker://rsenden/test-empty-var-action:latest
+        
+      - name: Docker - var empty
+        uses: docker://rsenden/test-empty-var-action:latest
+        with:
+          test:
+          
+      - name: Docker - var set to hello
+        uses: docker://rsenden/test-empty-var-action:latest
+        with:
+          test: hello
+
+
+
+      - name: Action - var not set
+        uses: rsenden/test-empty-var-action@master
+        
+      - name: Action - var empty
+        uses: rsenden/test-empty-var-action@master
+        with:
+          test:
+
+      - name: Action - var set to hello
+        uses: rsenden/test-empty-var-action@master
+        with:
+          test: hello

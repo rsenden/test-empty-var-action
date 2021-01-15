@@ -1,0 +1,13 @@
+name: 'Test empty var'
+description: 'Test empty var'
+author: 'rsenden'
+inputs:
+  test:
+    description: 'Test input'
+    required: false
+runs:
+  using: 'docker'
+  image: 'docker://rsenden/test-empty-var-action:latest'
+branding:
+  icon: 'code'
+  color: 'blue'
